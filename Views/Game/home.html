@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <link rel="stylesheet" href="Content/style.css">
+         <title>Hello</title>
+    </head>
+    <body>
+        <h1 id="title" align=center>Welcome to the Great Number Game!</h1>
+        <h3 align=center>I am thinking of a number between 1 and 100</h3>
+        <h3 align=center>Take a guess!</h3>
+        <p>actually the number is... </p>@ViewBag.random
+        @If.Context.ViewBag.higherhigher
+        <h1 id="higher">TRY Higher Number!</h1>
+        @EndIf
+        @If.Context.ViewBag.lowerlower
+        <h1 id="lower">TRY Lower Number!</h1>
+        @EndIf
+        @If.Context.ViewBag.truetrue
+        <h1 id="true">You got it right! Wanna play again?</h1>
+        <form action="/refresh">
+            <input type="submit" value="Start Over!">
+        </form>
+        @EndIf
+        <form action="/check" method="post" align=center>
+            <input type="text" name="number"><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
